@@ -12,3 +12,6 @@ new TouchBarButton({
 ```
 
 Doing it this way has an obvious performance downside because it means the raw image data goes from NSImage -> Nodejs buffer -> nativeImage/Chromium image type -> NSImage. That's a lot of runaround 😓 .
+
+
+Inspired by https://github.com/electron/electron/issues/9414
