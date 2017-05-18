@@ -1,0 +1,21 @@
+{
+  "name": "electron-named-image",
+  "version": "1.0.0",
+  "description": "Node.js bridge to Objective-C [NSImage imageNamed]",
+  "main": "index.js",
+  "scripts": {
+    "install": "node-gyp rebuild",
+    "test-electron": "electron test/electron-test.js",
+    "compile-for-electron": "HOME=~/.electron-gyp node-gyp rebuild -d --target=1.6.7 --arch=x64 --dist-url=https://atom.io/download/electron"
+  },
+  "keywords": [],
+  "author": "Cameron Nokes",
+  "license": "ISC",
+  "gypfile": true,
+  "dependencies": {
+    "nan": "^2.6.2"
+  },
+  "devDependencies": {
+    "electron": "^1.6.7"
+  }
+}
