@@ -1,17 +1,29 @@
-# electron-named-image (WIP)
+# electron-named-image
 Native node.js addon that returns Objective-C `[NSImage imageNamed]` calls as a buffer. For use with Electron. 
 
-The remaining issue with this is that icons (like the up chevron) are black by default, so somehow I need to be able to change the color. NSTouchBar seems to do this automatically when passed a NSImage, AFAIK. 
+This lets you do use default macOS images/icons with little effort. So you can set up your TouchBar to look like this:
 
-Sample use:
+
+![](https://github.com/ccnokes/electron-named-image/blob/master/example-images/Screen%20Shot%202017-05-29%20at%2012.51.49%20PM.png)
+
+(Note the macOS TouchBar icons in there in between the defaults)
+
+
+
+...or your menu to look like this:
+
+![](https://github.com/ccnokes/electron-named-image/blob/master/example-images/Screen%20Shot%202017-05-29%20at%2012.47.21%20PM.png)
+
+(Note the icons on the menu items)
+
+
+## Sample usage:
 
 ```javascript
 new TouchBarButton({
-  icon: nativeImage.createFromBuffer(namedImage.getImagedNamed('NSTouchBarRefreshTemplate'))
+  icon: nativeImage.createFromBuffer(namedImage.getImageNamed('NSTouchBarRefreshTemplate'))
 })
 ```
-
-Doing it this way has an obvious performance downside because it means the raw image data goes from NSImage -> Nodejs buffer -> nativeImage/Chromium image type -> NSImage. That's a lot of runaround 😓 .
 
 
 Inspired by https://github.com/electron/electron/issues/9414
