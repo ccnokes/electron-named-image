@@ -8,9 +8,16 @@
     "test-electron": "electron test/electron-test.js",
     "compile-for-electron": "HOME=~/.electron-gyp node-gyp rebuild -d --target=1.6.7 --arch=x64 --dist-url=https://atom.io/download/electron"
   },
-  "keywords": [],
+  "keywords": ["electron", "macos"],
+  "os": [
+    "darwin"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ccnokes/electron-named-image"
+  },
   "author": "Cameron Nokes",
-  "license": "ISC",
+  "license": "MIT",
   "gypfile": true,
   "dependencies": {
     "nan": "^2.6.2"

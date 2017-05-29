@@ -9,7 +9,8 @@
       'conditions': [
         ['OS=="mac"', {
           'xcode_settings': {
-            'SDKROOT': 'macosx10.11'
+            "OTHER_CPLUSPLUSFLAGS": ["-std=c++11", "-stdlib=libc++", "-mmacosx-version-min=10.7"],
+            "OTHER_LDFLAGS": ["-framework CoreFoundation -framework AppKit"]
           },
           'sources': [
             'named-image.mm',

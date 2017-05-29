@@ -5,7 +5,7 @@
 
 namespace NamedImage {
 
-Nan::MaybeLocal<v8::Object> getImagedNamed(const char * str);
+Nan::MaybeLocal<v8::Object> getImageNamed(const char * str, bool invert);
 
 }
 
