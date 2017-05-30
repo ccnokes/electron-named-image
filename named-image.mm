@@ -11,6 +11,13 @@ Nan::MaybeLocal<v8::Object> getImageNamed(const char * str, bool invert = false)
   @autoreleasepool {
     // create namedImage
     NSImage * image = [NSImage imageNamed:[NSString stringWithUTF8String:str]];
+
+    // validate it
+    if(!image.valid) {
+      @throw [NSException exceptionWithName:@"Invalid imageNamed value"
+                          reason:@"The image you're requesting doesn't exist or is invalid"
+                          userInfo:nil];
+    }
     
     // copy buffer to NSData
     CGImageRef cgRef = [image CGImageForProposedRect:nil context:nil hints:nil];
@@ -26,7 +33,6 @@ Nan::MaybeLocal<v8::Object> getImageNamed(const char * str, bool invert = false)
       [filter setValue:ciImage forKey:@"inputImage"];
       CIImage *output = [filter valueForKey:@"outputImage"];
       
-
       NSCIImageRep *imageRep = [NSCIImageRep imageRepWithCIImage:output];
       NSImage *_image = [[NSImage alloc] initWithSize:[imageRep size]];
       [_image addRepresentation:imageRep];

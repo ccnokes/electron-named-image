@@ -1,14 +1,14 @@
 {
   "name": "electron-named-image",
   "version": "1.0.0",
-  "description": "Node.js bridge to Objective-C [NSImage imageNamed]",
+  "description": "Node.js bridge to Objective-C [NSImage imageNamed]. Simplifies using default macOS images in Electron apps.",
   "main": "index.js",
   "scripts": {
     "install": "node-gyp rebuild",
     "test-electron": "electron test/electron-test.js",
     "compile-for-electron": "HOME=~/.electron-gyp node-gyp rebuild -d --target=1.6.7 --arch=x64 --dist-url=https://atom.io/download/electron"
   },
-  "keywords": ["electron", "macos"],
+  "keywords": ["electron", "macos", "native", "touchbar", "menu"],
   "os": [
     "darwin"
   ],
