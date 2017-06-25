@@ -54,6 +54,8 @@ Menu.setApplicationMenu(Menu.buildFromTemplate([
 
 For all possible "named images" on macOS, [see this](http://hetima.github.io/fucking_nsimage_syntax/).
 
+All of the `NSTouchBar*` named images have been outputted as PNGs to the `images` folder which you can use as well.
+
 ## Compiling for use in an Electron app
 See [https://github.com/electron/electron/blob/master/docs/tutorial/using-native-node-modules.md] for the easy, right way. Or you can also `npm install -g node-gyp` and then run the same `compile-for-electron` script I have in the package.json in the root of this module's folder.
 
