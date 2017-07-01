@@ -7,6 +7,8 @@ Native node.js addon that returns Objective-C `[NSImage imageNamed]` calls as a 
 npm install electron-named-image
 ```
 
+Most likely you'll want to add it to your `optionalDependencies` due to the way that npm handles platform specific native addons. This way `npm install` won't fail on non-macOS platforms.
+
 ## What? Why?
 
 This lets you use default macOS images/icons with little effort. So you can set up your TouchBar to look like this:
@@ -54,7 +56,16 @@ Menu.setApplicationMenu(Menu.buildFromTemplate([
 
 For all possible "named images" on macOS, [see this](http://hetima.github.io/fucking_nsimage_syntax/).
 
-All of the `NSTouchBar*` named images have been outputted as PNGs to the `images` folder which you can use as well.
+If you specify an invalid named image or are using it on a macOS version that pre-dates `NSTouchBar*` icons, you'll get back an empty buffer. For example:
+
+```javascript
+namedImage.getImageNamed('invalid').length // => 0
+namedImage.getImageNamed('NSTrashFull').length // => 9166
+```
+
+The empty buffer will work as expected with Electron's `nativeImage` module, you just won't have any actual image.
+
+All of the `NSTouchBar*` named images have been outputted as PNGs to the `images` folder which you can use as well just by manually saving and importing them into your app.
 
 ## Compiling for use in an Electron app
 See [https://github.com/electron/electron/blob/master/docs/tutorial/using-native-node-modules.md] for the easy, right way. Or you can also `npm install -g node-gyp` and then run the same `compile-for-electron` script I have in the package.json in the root of this module's folder.

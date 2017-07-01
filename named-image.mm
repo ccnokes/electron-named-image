@@ -12,11 +12,9 @@ Nan::MaybeLocal<v8::Object> getImageNamed(const char * str, bool invert = false)
     // create namedImage
     NSImage * image = [NSImage imageNamed:[NSString stringWithUTF8String:str]];
 
-    // validate it
+    // validate it, return empty buffer if invalid
     if(!image.valid) {
-      @throw [NSException exceptionWithName:@"Invalid imageNamed value"
-                          reason:@"The image you're requesting doesn't exist or is invalid"
-                          userInfo:nil];
+      return Nan::NewBuffer(0);
     }
     
     // copy buffer to NSData

@@ -6,6 +6,8 @@
   "scripts": {
     "install": "node-gyp rebuild",
     "test-electron": "electron test/electron-test.js",
+    "test-node": "node test/node-test.js",
+    "compile-for-node": "node-gyp rebuild -d", 
     "compile-for-electron": "HOME=~/.electron-gyp node-gyp rebuild -d --target=1.6.7 --arch=x64 --dist-url=https://atom.io/download/electron",
     "get-images": "node bin/generate-images"
   },

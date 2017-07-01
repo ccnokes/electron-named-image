@@ -34,6 +34,10 @@ app.on('ready', () => {
           label: 'Connect Bluetooth',
           icon: nativeImage.createFromBuffer(addon.getImageNamed('NSBluetoothTemplate')).resize({ width: 10 })
         },
+        {
+          label: 'Invalid',
+          icon: nativeImage.createFromBuffer(addon.getImageNamed('invalid')).resize({ width: 10 })
+        },
         { role: 'quit' }
       ]
     }
