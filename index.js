@@ -1,5 +1,4 @@
-// change from Release to Debug when debugging
-const addon = require('./build/Release/NamedImage');
+const addon = require('bindings')('NamedImage.node');
 
 const dontInvert = [
   'NSTouchBarColorPickerFill',

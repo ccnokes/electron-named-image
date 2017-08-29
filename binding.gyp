@@ -20,6 +20,11 @@
               '$(SDKROOT)/System/Library/Frameworks/AppKit.framework',
             ],
           }
+        }],
+        ['OS != "mac"', {
+          'sources': [ 
+            'named-image-stub.cc' 
+          ]
         }]
       ],
     }
