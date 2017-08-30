@@ -7,7 +7,7 @@ Native node.js addon that returns Objective-C `[NSImage imageNamed]` calls as a 
 npm install electron-named-image
 ```
 
-Most likely you'll want to add it to your `optionalDependencies` due to the way that npm handles platform specific native addons. This way `npm install` won't fail on non-macOS platforms.
+While macOS is currently the only supported platform, this module can be safely installed and used on non-macOS platforms. (No need to wrap your `require` in a conditional statement or other work-arounds).
 
 ## What? Why?
 
