@@ -1,6 +1,6 @@
 {
   "name": "electron-named-image",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Node.js bridge to Objective-C [NSImage imageNamed]. Simplifies using default macOS images in Electron apps.",
   "main": "index.js",
   "scripts": {
