@@ -18,9 +18,6 @@
     "touchbar",
     "menu"
   ],
-  "os": [
-    "darwin"
-  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/ccnokes/electron-named-image"
