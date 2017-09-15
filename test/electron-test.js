@@ -19,6 +19,7 @@ app.on('ready', () => {
 
   win = new BrowserWindow();
   win.loadURL(path.join('file://', __dirname, 'index.html'));
+  win.webContents.openDevTools();
 
   win.setTouchBar(tb);
 

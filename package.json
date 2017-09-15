@@ -1,6 +1,6 @@
 {
   "name": "electron-named-image",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Node.js bridge to Objective-C [NSImage imageNamed]. Simplifies using default macOS images in Electron apps.",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
     "test-electron": "electron test/electron-test.js",
     "test-node": "node test/node-test.js",
     "compile-for-node": "node-gyp rebuild -d",
-    "compile-for-electron": "HOME=~/.electron-gyp node-gyp rebuild -d --target=1.6.7 --arch=x64 --dist-url=https://atom.io/download/electron",
+    "compile-for-electron": "HOME=~/.electron-gyp node-gyp rebuild -d --target=1.7.6 --arch=x64 --dist-url=https://atom.io/download/electron",
     "get-images": "node bin/generate-images"
   },
   "keywords": [
@@ -30,6 +30,7 @@
     "nan": "^2.6.2"
   },
   "devDependencies": {
-    "electron": "^1.6.7"
+    "electron": "^1.7.6",
+    "electron-rebuild": "^1.6.0"
   }
 }
