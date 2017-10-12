@@ -1,3 +1,8 @@
+# This is deprecated because this functionality is now in Electron core. 
+See https://github.com/electron/electron/pull/10727
+
+---
+
 # electron-named-image
 Native node.js addon that returns Objective-C `[NSImage imageNamed]` calls as a PNG buffer, which simplifies using default macOS images in Electron apps.
 
